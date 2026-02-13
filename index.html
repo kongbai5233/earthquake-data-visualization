@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地震网</title>
+    <!--    引入bootstrap样式-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--    引入第三方重置样式-->
+    <link rel="stylesheet" href="css/normalize.css">
+
+<!--    d3提示框样式-->
+    <link rel="stylesheet" href="css/d3-tip.css">
+<!--    外部样式-->
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="font/iconfont.css">
+</head>
+<body>
+<div class="mainContainer">
+
+    <div class="left_container">
+            <div class="logo">
+                <img class="logo_pic" src="images/logo.png" alt="logo">
+                <span>全球地震网</span>
+            </div>
+
+            <div class="feature">
+
+                <button type="button"  class="btn btn-primary btn-lg  featureBtn noUse">地震区域可视化</button>
+                <button type="button"  class="btn btn-secondary btn-lg  featureBtn noUse">地震次数可视化</button>
+                <button type="button" class="btn btn-secondary btn-lg  featureBtn noUse">地震震级可视化</button>
+                <button type="button"  class="btn btn-secondary btn-lg  featureBtn noUse">地震年份可视化</button>
+                <div class="myPut"><</div>
+
+            </div>
+    </div>
+
+    <div class="right_container">
+
+        <div id="svg1" class="mainSvg secondary">
+
+        </div>
+        <div id="svg2" class="mainSvg secondary">
+
+        </div>
+        <div id="svg3" class="mainSvg secondary">
+
+        </div>
+        <div id="svg4" class="mainSvg secondary">
+           <div class="svgFeature">
+               <button type="button"  class="btn btn-primary  isDisOn "  >上一年</button>
+               <button type="button"  class="btn btn-primary  isOn ">开启播放</button>
+               <button type="button"  class="btn btn-primary  isOn ">下一年</button>
+           </div>
+        </div>
+        <div  class="welcome mainSvg ">
+            <span>使用 D3.js 库来处理和可视化一个关于 1900-2014年地震统计 的数据集。<br>
+                它从一个 CSV文件 加载数据，然后创建三个不同的图表：一个 <span style="color:red">世界地图</span> 显示地震的地理位置，一个 <span style="color:red">折线图</span> 显示地震随时间的变化，以及一个 <span style="color:red">饼图</span> 显示不同震级地震的比例。
+<br><br>
+1. <span style="color:gold">地震区域可视化（世界地图）</span><br>
+使用 D3.js 结合地理数据（GeoJSON）来创建一个交互式地图，显示 1900-2014年 期间发生的地震位置。地震的位置通过经纬度坐标标注在地图上，颜色和大小的变化可以用来展示地震的震级或其他参数。
+<br>
+功能：通过地图展示全球范围内的地震分布。不同的颜色或气泡大小代表地震的震级或次数。<br><br>
+2. <span style="color:gold">折线图（地震次数随时间变化）</span><br>
+通过 D3.js 绘制一个折线图来展示地震的年/月发生次数。横坐标为 年份（1900-2014），纵坐标为 地震发生次数。该折线图可以让用户清晰地看到地震次数随时间的变化趋势，帮助观察地震的高发年份或周期性变化。
+<br>
+功能：折线图动态展示每年的地震数量，帮助用户理解不同年份间地震活动的变化。<br><br>
+3. <span style="color:gold">饼图（震级分布）</span><br>
+使用 D3.js 绘制一个 饼图，显示不同震级范围的地震比例。每个震级范围分配一种不同的颜色，图表中每个部分的大小表示该震级范围内的地震数量。<br>
+
+功能：通过饼图展示不同震级地震的比例，帮助用户直观地看到各类地震在总体中的分布情况。</span>
+        </div>
+        <div  class="aboutMe mainSvg ">
+                <p>空白丶</p>
+
+        </div>
+    </div>
+
+    <!--音乐播放器-->
+    <div class="music" id="music-block">
+        <span class="iconfont play-pause" id="play-pause-button">&#xea6d;</span>
+        <div class="op">
+            <audio src="audio1.mp4" id="music-resource" ></audio>
+        </div>
+    </div>
+    <div class="nextMusic">
+        <span class="iconfont">&#xe601;</span>
+    </div>
+</div>
+
+
+<!--    bootstrap-->
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/topojson.min.js"></script>
+<!--    d3本体-->
+<script src="js/d3.v7.min.js"></script>
+<!--    d3提示框 -->
+<script src="js/d3-v6-tip.js"></script>
+<!--    时间转换js-->
+<script src="js/moment.js"></script>
+<script src="js/runMotionLine.js"></script>
+<script src="js/Map.js"></script>
+<script src="js/Line.js"></script>
+<script src="js/Rectangular.js"></script>
+<script src="js/index.js"></script>
+
+
+</body>
+</html>
